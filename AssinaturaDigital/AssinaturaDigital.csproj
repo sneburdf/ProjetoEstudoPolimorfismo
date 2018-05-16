@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA0B1F39-99EC-4CAF-BC5F-42F43BC74FE4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AssinaturaDigital</RootNamespace>
+    <AssemblyName>AssinaturaDigital</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>c:\temp\Assinador\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A2582C940B638B8082F9015013B97581350F057D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AssinaturaDigital_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FwkSeguranca">
+      <HintPath>D:\SefFwk\FwkSeguranca.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\..\..\..\..\..\temp\Validador\Dlls Validador\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="utCCR">
+      <HintPath>D:\utCCR.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums\ResultadoValidacao.cs" />
+    <Compile Include="Enums\SituacaoArquivo.cs" />
+    <Compile Include="FormOk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOk.Designer.cs">
+      <DependentUpon>FormOk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormErro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormErro.Designer.cs">
+      <DependentUpon>FormErro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelecaoCertificadoDigital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelecaoCertificadoDigital.Designer.cs">
+      <DependentUpon>FormSelecaoCertificadoDigital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsExtensions.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TO\Arquivo.cs" />
+    <Compile Include="TO\ArquivoAAtualizar.cs" />
+    <Compile Include="TO\TOCampos.cs" />
+    <Compile Include="TO\TOCertificadoDigital.cs" />
+    <Compile Include="TO\TOLogProcessamentos.cs" />
+    <Compile Include="TO\TORegistroB470.cs" />
+    <Compile Include="TO\TORegistroE360.cs" />
+    <Compile Include="TO\TOResgistro.cs" />
+    <Compile Include="TO\TOResultadoEnvio.cs" />
+    <Compile Include="TO\TOResultadoValidacao.cs" />
+    <Compile Include="TO\TOResumoLivro.cs" />
+    <Compile Include="TO\TOXmlConfiguracao.cs" />
+    <Compile Include="Util\Assinatura\Win32.cs" />
+    <Compile Include="Util\CertificadoDigital\Crypt32.cs" />
+    <Compile Include="Util\HelperCertificadoDigital.cs" />
+    <Compile Include="Util\HelperCompressao.cs" />
+    <Compile Include="Util\HelperConversao.cs" />
+    <Compile Include="Util\HelperCriptografia.cs" />
+    <Compile Include="Util\HelperDLLNaoGerenciada.cs" />
+    <Compile Include="Util\HelperEstrutura.cs" />
+    <Compile Include="Util\HelperVerificacoes.cs" />
+    <Compile Include="Util\HelperXML.cs" />
+    <Compile Include="Util\Seguranca.cs" />
+    <Compile Include="Util\StreamWithProgress.cs" />
+    <EmbeddedResource Include="FormOk.resx">
+      <DependentUpon>FormOk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormErro.resx">
+      <DependentUpon>FormErro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelecaoCertificadoDigital.resx">
+      <DependentUpon>FormSelecaoCertificadoDigital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="AssinaturaDigital_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Util\if_preferences-desktop-cryptography_8794.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
