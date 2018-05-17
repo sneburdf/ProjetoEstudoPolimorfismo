@@ -23,6 +23,7 @@ namespace AssinaturaDigital
 
         private void button1_Click(object sender, EventArgs e)
         {
+            HelperXml.SalvarUltimoDiretorioLFEs(@"c:\temp");
             openFileDialog1.InitialDirectory = HelperXml.DadosConfiguracao.UltimoDiretorioLFEs;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {

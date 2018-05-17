@@ -17,16 +17,18 @@ namespace AssinaturaDigital.Util
         private static string DirDados = Path.Combine(dirValidador, "Dados");
         private static string DirConfig = Path.Combine(dirValidador, "Config");
 
-        //public static string DirExecutavelAtual = AppDomain.CurrentDomain.BaseDirectory;
+        public static string DirExecutavelAtual = AppDomain.CurrentDomain.BaseDirectory;
         public static string DirDadosEncrypt = Path.Combine(DirDados, "Encrypt");
         public static string DirDadosValidados = Path.Combine(DirDados, "Validados");
         public static string DirTemp = Path.Combine(dirValidador, "Temp");
         public static string DirBin = Path.Combine(dirValidador, "Bin");
         public static string DirBin64 = Path.Combine(dirValidador, "Bin\\64");
         public static string DirLog = Path.Combine(dirValidador, "Log");
-
-        public static string PathXmlArquivosValidados = Path.Combine(DirConfig, "ArquivosPendentes.xml");
-        public static string PathXmlConfiguracoesUsuario = Path.Combine(DirConfig, "configuracaolfe.xml");
+        //public static string PathXmlArquivosValidados = Path.Combine(DirConfig, "ArquivosPendentes.xml");
+        public static string PathXmlArquivosValidados = Path.Combine(@"\\fazendasrv512\Internet\XML", "ArquivosPendentes.xml");
+        //\\fazendasrv512\Internet\XML
+        //public static string PathXmlConfiguracoesUsuario = Path.Combine(DirConfig, "configuracaolfe.xml");
+        public static string PathXmlConfiguracoesUsuario = Path.Combine(@"\\fazendasrv512\Internet\XML", "configuracaolfe.xml");
         public static string PathArquivoLogValidacao = Path.Combine(DirLog, "logValidador.log");        
         public static string PathDLLValidador = Path.Combine(DirBin, "neValidador.dll");
         public static string PathDLLValidador64 = Path.Combine(DirBin64, "neValidador.dll");
@@ -62,8 +64,8 @@ namespace AssinaturaDigital.Util
                 TentarDeletarArquivosDoDiretorio(DirDados);
                 TentarDeletarArquivosDoDiretorio(DirTemp);
 
-                if (File.Exists(PathXmlArquivosValidados))
-                    File.Delete(PathXmlArquivosValidados);
+               // if (File.Exists(PathXmlArquivosValidados))
+               //     File.Delete(PathXmlArquivosValidados);
 
                 if (File.Exists(PathDLLValidador) && File.Exists(PathDLLValidador64))
                     File.Delete(PathDLLValidador);
