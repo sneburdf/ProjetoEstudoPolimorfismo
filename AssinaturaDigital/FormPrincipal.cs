@@ -50,8 +50,13 @@ namespace AssinaturaDigital
             if (formSelecaoCertificado.ShowDialog() != DialogResult.OK) return;
             try
             {
+                var nomeArquivo = caminhoArquivo.Split(Convert.ToChar("."));
                 HelperCertificadoDigital.AssinarArquivo(formSelecaoCertificado.CertificadoDigitalSelecionado.X509, caminhoArquivo,
-                            caminhoArquivo.Replace(".", "-") + ".cas");
+                           nomeArquivo[0] + ".cas");
+                var hasArquivo = HelperCriptografia.GerarHashDeArquivo(caminhoArquivo);
+                
+                System.IO.File.WriteAllText(nomeArquivo[0] +"_HASH.txt", hasArquivo);
+
                 var comp = new HelperCompressao();
                 var formOk = new FormOk();
                 formOk.ShowDialog();
